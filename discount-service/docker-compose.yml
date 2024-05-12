@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  product-postgres:
+    image: postgres
+    container_name: discount-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: discountDb
+    ports:
+      - "5433:5432"
+    volumes:
+      - discount-volume:/var/lib/postgresql/data
+volumes:
+  discount-volume:
